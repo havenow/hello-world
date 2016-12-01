@@ -1,0 +1,9 @@
+http://www.tuicool.com/articles/MRbaUv6
+http://www.360doc.com/content/13/0622/16/203871_294766073.shtml
+
+1、安装TortoiseGit
+2、使用TortoiseGit的Puttygen生成密钥，保存ppk文件
+3、GitHub-->Setting，添加SSH Key
+4、使用TortoiseGit的Pageant，添加ppk文件
+5、从GitHub上下载代码，url就是SSH地址。
+6、在本地使用TortoiseGit。
