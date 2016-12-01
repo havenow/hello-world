@@ -1,10 +1,1 @@
-# hello-world
-just test repository
-
-branch readme-edits
-
-Click the README.md file.
-Click the  pencil icon in the upper right corner of the file view to edit.
-In the editor, write a bit about yourself.
-Write a commit message that describes your changes.
-Click Commit changes button.
+使用git以及相关资料
