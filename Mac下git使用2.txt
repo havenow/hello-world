@@ -1,0 +1,66 @@
+参考《GitHub入门与实践》
+http://blog.csdn.net/hustpzb/article/details/8230454/
+
+MacMini版本 	10.11.6
+git版本 		git version 2.7.4 (Apple Git-66)
+
+使用到的命令：
+git --version
+git config -l
+git config --global user.name "havenow"
+git config --global user.email "715667426@qq.com"
+ssh-keygen -t rsa -C "715667426@qq.com"
+cat ~/.ssh/id_rsa.pub
+ssh -T git@github.com 
+git clone git@github.com:havenow/hello-world.git
+
+1、设置Git的user name和email：
+git config --global user.name "havenow"
+git config --global user.email "715667426@qq.com"
+
+2、生存密钥：
+按3个回车，密码为空。
+shixiaoshandeMac-mini:.ssh wangf$ ssh-keygen -t rsa -C "715667426@qq.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/wangf/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/wangf/.ssh/id_rsa.按回车
+Your public key has been saved in /Users/wangf/.ssh/id_rsa.pub.输入密码
+The key fingerprint is:再次输入密码
+SHA256:+9dr6dqus5cFXlPVfkpfGC3GdSH0wjMuSRhBvWa6qco 715667426@qq.com
+The key's randomart image is:
++---[RSA 2048]----+
+|        .+o .+ +B|
+|          o.. B =|
+|         . ..* *.|
+|          .+o B.=|
+|        S +o + =+|
+|         o  . o o|
+|        . o  . + |
+|    .    +  o.*  |
+|     E... ..+X=. |
++----[SHA256]-----+
+
+id_rsa 文件是私有密钥,id_rsa.pub 是公开密钥 
+
+3、在 GitHub 中添加公开密钥
+Key 部分请粘贴 id_rsa.pub 文件里的内容。id_rsa.pub 的内容可以用如下方法查看。 
+cat ~/.ssh/id_rsa.pub
+ssh-rsa 公开的密钥 715667426@qq.com
+
+4、用手中的私人密钥与 GitHub 进行认证和通信。
+ssh -T git@github.com 
+The authenticity of host 'github.com (192.30.253.112)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? 输入yes
+Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
+Hi havenow! You've successfully authenticated, but GitHub does not provide shell access.
+
+5、clone已有仓库
+git clone git@github.com:havenow/hello-world.git
+
+git add "add Mac下git使用"
+git commit -m "add Mac下git使用"
+git push
+
